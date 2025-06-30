@@ -34,7 +34,8 @@ body {
   background-position: top center;
   /* A propriedade background-size: cover; faz com que a imagem de fundo cubra todo o elemento, ajustando seu tamanho proporcionalmente e podendo cortar partes da imagem para preencher completamente a área */
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  background-attachment: fixed;
 
   /* Você pode resumir tudo acima em uma unica TAG, chamada popularmente de atalho, como "background: url(./IMAGENS/bg-mobile.jpg) no-repeat top center/cover; */
 }
@@ -55,7 +56,7 @@ body * {
 /* O símbolo # é usado em CSS para selecionar um elemento com um ID específico. Por exemplo, #menu seleciona o elemento que possui id="menu" no HTML */
 #container0 {
   /* A propriedade width define a largura de um elemento. Pode ser especificada em unidades como px, %, em, entre outras */
-  width: 100%x;
+  width: 100%;
   /* A propriedade height define a altura de um elemento. Pode ser especificada em unidades como px, %, em, entre outras "height: 712px;" */
   max-width: 588px;
   /* A propriedade border define a borda de um elemento, permitindo especificar a largura, o estilo (como solid, dashed, dotted) e a cor da borda */
@@ -63,7 +64,7 @@ body * {
   /* A propriedade margin define o espaço externo ao redor de um elemento, afastando-o dos elementos vizinhos. Pode ser especificada em valores únicos ou múltiplos (ex: margin: 10px 20px) */
   margin: 56px auto 0px;
   /* A propriedade padding-top: 56px; define um espaçamento interno de 56 pixels no topo do elemento, afastando seu conteúdo da borda superior */
-  padding-top: 0 24px;
+  padding: 0 24px;
   margin-top: 56px;
 }
 
@@ -104,11 +105,15 @@ body * {
   transform: translateY(-50%);
   top: 50%;
   left: 0;
+  animation: slide-back 0.3s;
 }
 
 .light #botão button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+}
+
+#botão button:hover {
+  outline: 8px solid var(--cor-redes-sociais);
 }
 
 #botão span {
@@ -214,5 +219,23 @@ footer {
 
   .light {
     --bg-url: url(./IMAGENS/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
