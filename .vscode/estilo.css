@@ -54,9 +54,9 @@ body * {
 /* O símbolo # é usado em CSS para selecionar um elemento com um ID específico. Por exemplo, #menu seleciona o elemento que possui id="menu" no HTML */
 #container0 {
   /* A propriedade width define a largura de um elemento. Pode ser especificada em unidades como px, %, em, entre outras */
-  width: 360px;
+  width: 100%x;
   /* A propriedade height define a altura de um elemento. Pode ser especificada em unidades como px, %, em, entre outras "height: 712px;" */
-
+  max-width: 588px;
   /* A propriedade border define a borda de um elemento, permitindo especificar a largura, o estilo (como solid, dashed, dotted) e a cor da borda */
   /*border: 1px solid red;*/
   /* A propriedade margin define o espaço externo ao redor de um elemento, afastando-o dos elementos vizinhos. Pode ser especificada em valores únicos ou múltiplos (ex: margin: 10px 20px) */
