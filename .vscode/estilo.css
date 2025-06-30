@@ -34,6 +34,7 @@ body {
   background-position: top center;
   /* A propriedade background-size: cover; faz com que a imagem de fundo cubra todo o elemento, ajustando seu tamanho proporcionalmente e podendo cortar partes da imagem para preencher completamente a área */
   background-size: cover;
+  height: 100vh;
 
   /* Você pode resumir tudo acima em uma unica TAG, chamada popularmente de atalho, como "background: url(./IMAGENS/bg-mobile.jpg) no-repeat top center/cover; */
 }
@@ -64,7 +65,6 @@ body * {
   /* A propriedade padding-top: 56px; define um espaçamento interno de 56 pixels no topo do elemento, afastando seu conteúdo da borda superior */
   padding-top: 0 24px;
   margin-top: 56px;
-
 }
 
 #perfil {
@@ -88,21 +88,20 @@ body * {
   position: relative;
   width: 64px;
   margin: 4px auto;
-
 }
 
-#botão button{
-width: 32px;
-height: 32px;
-background: white var(--botão-imagem) no-repeat center;
-border: 0;
-border-radius: 50%;
-/* A propriedade position: absolute; posiciona o elemento de forma absoluta em relação ao ancestral mais próximo que tenha position diferente de static */
-position: absolute;
-/* A propriedade z-index: 1; define a ordem de empilhamento do elemento. Elementos com z-index maior ficam sobrepostos aos de z-index menor */
-z-index: 1;
+#botão button {
+  width: 32px;
+  height: 32px;
+  background: white var(--botão-imagem) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  /* A propriedade position: absolute; posiciona o elemento de forma absoluta em relação ao ancestral mais próximo que tenha position diferente de static */
+  position: absolute;
+  /* A propriedade z-index: 1; define a ordem de empilhamento do elemento. Elementos com z-index maior ficam sobrepostos aos de z-index menor */
+  z-index: 1;
 
-transform: translateY(-50%);
+  transform: translateY(-50%);
   top: 50%;
   left: 0;
 }
@@ -112,17 +111,15 @@ transform: translateY(-50%);
   left: initial;
 }
 
-
-#botão span{
+#botão span {
   display: block;
   width: 64px;
-height: 24px;
-background: var(--cor-superficial);
-border: 1px solid var(--cor-botão);
-backdrop-filter: blur(4px);
--webkit-backdrop-filter: blur(4px);
-border-radius: 9999px;
-
+  height: 24px;
+  background: var(--cor-superficial);
+  border: 1px solid var(--cor-botão);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
 }
 
 /* LISTAS DE ITENS */
@@ -139,7 +136,7 @@ ul {
   gap: 16px;
 }
 /* O seletor ul li a aplica estilos aos links (<a>) que estão dentro de itens de lista (<li>) de uma lista não ordenada (<ul>) */
-ul li a{
+ul li a {
   /* A propriedade display: flex; transforma o elemento em um contêiner flexível, permitindo organizar seus elementos filhos em linha ou coluna com maior controle de alinhamento e espaçamento */
   display: flex;
   /* A propriedade align-items: center; alinha os itens filhos de um contêiner flexível verticalmente ao centro do eixo transversal (geralmente o eixo vertical) */
@@ -158,15 +155,14 @@ ul li a{
   backdrop-filter: blur(4px);
   /* A propriedade -webkit-backdrop-filter: blur(4px); é a versão com prefixo para navegadores WebKit (como Safari) que aplica um efeito de desfoque de 4 pixels ao fundo atrás do elemento */
   -webkit-backdrop-filter: blur(4px);
-/* A propriedade text-decoration: none; remove qualquer decoração do texto, como sublinhado, linha sobreposta ou riscado */
+  /* A propriedade text-decoration: none; remove qualquer decoração do texto, como sublinhado, linha sobreposta ou riscado */
   text-decoration: none;
   font-weight: 500;
 
   transition: background 0.2s;
-
 }
 
-ul li a:hover{
+ul li a:hover {
   background: var(--cor-superficial-hover);
   border: 1.5px solid var(--cor-do-texto);
 }
@@ -175,7 +171,7 @@ ul li a:hover{
 #icones-redes-sociais {
   /* A propriedade display: flex; transforma o elemento em um contêiner flexível, permitindo alinhar e distribuir seus elementos filhos de forma eficiente em linha ou coluna */
   display: flex;
-/* A propriedade gap: 16px; define um espaçamento de 16 pixels entre os itens filhos dentro de um contêiner flex (ou grid)
+  /* A propriedade gap: 16px; define um espaçamento de 16 pixels entre os itens filhos dentro de um contêiner flex (ou grid)
   gap: 32px;*/
   /* A propriedade padding: 24px 0px; aplica 24 pixels de espaçamento interno no topo e na base do elemento, e 0 pixels nas laterais */
   padding: 24px 0px;
@@ -209,4 +205,14 @@ footer {
   padding: 24px 0px;
   text-align: center;
   font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./IMAGENS/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./IMAGENS/bg-desktop-light.jpg);
+  }
 }
